@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useInsertionEffect, useState } from 'react';
 
 const Filters = () => {
     const [selectedTag, setSelectedTag ] = useState("all");
+    useEffect(()=>{
+        console.log("document ready!");
+    }, [])
     return (
         <div>
-            <div className='container mt-3 mb-3
-            justify-content-between'
+            <div className='container mt-3 mb-3 d-flex justify-content-between'
             >
                 <div>
                    <span onClick={()=>setSelectedTag('all')} className={selectedTag === 'all' ? "btn btn-dark": 'btn btn-light'}>All</span>
